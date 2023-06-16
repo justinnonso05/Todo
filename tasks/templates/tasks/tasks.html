@@ -1,0 +1,48 @@
+{% extends "tasks/base.html" %}
+{% block content %}
+
+	<style type="text/css">
+		.alert-success {
+			display: none;
+		}
+	</style>
+
+	{% if messages %}
+		{% for message in messages %}
+			<div id="message" class="alert-{{ message.tags }}-add">
+				{{ message }}
+				<button onclick="hide()">Close</button>
+			</div>
+		{% endfor %}
+	{% endif %}
+	<!-- <h1 class="your-task">Your Tasks</h1> -->
+	<div class="tasks-page">
+		   
+		<h4 class="hello">Hello, {{request.user.username}}</h4>
+		<div class="tasks-container">
+		{% if todo.count == 0 %}
+			<div class="tasks">
+				<p style="font-size: 40px; font-weight: 900;">You have no tasks yet.</p>
+			</div>
+		{% else %}
+			{% for todo in todo %}
+				<div class="tasks">
+					<label class="label">{{todo.label}}&nbsp;</label><label class="created">created&nbsp;{{todo.date_created}}</label><br><hr>
+					<label class="tasks" id="todo{{ todo.pk }}">{{ todo.tasks }}</label><hr>
+					<div class="del-edit">
+						<a class="edit" href="{% url 'edit' todo.pk %}">Edit</a>
+						<a class="edit" href="{% url 'delete' todo.pk %}">Delete</a>
+					</div>
+				</div>
+			{% endfor %}
+		{% endif %}
+		
+		</div>
+	</div>
+	<script type="text/javascript">
+		function hide() {
+			var message = document.getElementById('message');
+			message.style.display = 'none';
+		}
+	</script>
+{% endblock content %}

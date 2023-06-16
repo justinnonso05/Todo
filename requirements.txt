@@ -1,0 +1,11 @@
+altgraph==0.17.3
+asgiref==3.6.0
+crispy-bootstrap4==2022.1
+darkdetect==0.8.0
+Django==4.2.1
+django-crispy-forms==2.0
+pefile==2023.2.7
+Pillow==9.5.0
+pywin32-ctypes==0.2.0
+sqlparse==0.4.4
+tzdata==2023.3

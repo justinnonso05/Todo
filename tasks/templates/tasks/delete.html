@@ -1,0 +1,16 @@
+{% extends "tasks/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<style type="text/css">
+
+
+	</style>
+	
+	<div class="add-content">
+		<h4>Delete task</h4>
+		<form method="POST" class="add-todo" id="delete_form">
+			{% csrf_token %}
+			<h2 class="confirm-delete" style="color: red;">Confirm Delete!</h2>
+			<button type="submit" id="add" class="">Delete</button><a class="cancel" href="{% url 'tasks' %}">Cancel</a>
+		</form>
+{% endblock content%}
