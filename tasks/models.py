@@ -9,7 +9,7 @@ class Todo(models.Model):
 	date_created = models.DateTimeField(default=timezone.now)
 	label = models.CharField(max_length=100, default='')
 	tasks = models.TextField()
-	is_completed =  models.BooleanField(default=False)
+	Check_if_task_is_completed =  models.BooleanField(default=False)
 
 	def __str__(self):
 		return self.label
