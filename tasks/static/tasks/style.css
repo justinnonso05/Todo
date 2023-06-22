@@ -4,8 +4,8 @@
 	margin: 0px;
 	padding: 0px;
 	font-family: 'poppins', arial;
-	scrollbar-width: 2px;
-    scrollbar-color: rgba(35, 29, 61, .5) #f1f1f1;
+	scrollbar-width: thin;
+    scrollbar-color: rgb(35, 29, 61) #f1f1f1;
 }
 body {
 	background-color: whitesmoke;
@@ -94,11 +94,17 @@ div.signup-content {
 	text-align: left;
 	background-color: rgba(35, 29, 61, .12);
 	padding: 25px;
-	margin-top: 5%;
+/*	margin-top: 5%;*/
 /*	padding-left: 10px;
 	padding-right: 10px;*/
 	border-radius: 10px;
-
+}
+@media only screen and (max-height: 650px) {
+	div.signup-content {
+		position: relative;
+		top: 50px;
+		margin-bottom: 30px;
+	}
 }
 div.add-content {
 	display: flex;
@@ -288,7 +294,9 @@ div.tasks:hover {
     background-color: #2e0854;
     border-radius: 5px;
 }
-
+::-moz-scrollbar-track {
+    background-color: white;
+}
 ::-moz-scrollbar-thumb {
     background-color: #2e0854;
     border-radius: 5px;
@@ -389,10 +397,10 @@ h2.confirm-delete {
 	color: black;
 }
 div.add-content {
-		position: relative;
-		left: 9vw;
-		margin-top: 10%;
-	}
+	position: relative;
+	left: 9vw;
+	margin-top: 52px;
+}
 
 @media only screen and (max-width: 1100px) {
 	div.menu {
@@ -407,8 +415,6 @@ div.add-content {
 		position: relative;
 		left: 18vw;
 	}
-
-
 }
 @media only screen and (max-width: 750px) {
 	@keyframes add {
@@ -444,11 +450,23 @@ div.add-content {
 		height: 90vh;
 	}
 	div.add-content {
-		margin-top: 10%;
-		position: static;
+		left: 0px;
+		border-radius: 4px;
+	}
+	@media only screen and (max-height: 605px) {
+		div.add-content {
+			top: 10px;
+		}
 	}
 	div.login-content {
 		width: 90vw;
+		height: auto;
+		position: relative;
+	}
+	@media only screen and (max-height: 450px) {
+		div.login-content {
+			top: 50px;
+		}
 	}
 	div.content {
 		height: 100vh;
@@ -458,6 +476,7 @@ div.add-content {
 		padding: 6px;
 /*		display: flex;*/
 	}
+	
 	div.tasks {
 		margin-top: 24px;
 	}
@@ -465,7 +484,6 @@ div.add-content {
 		position: absolute;
 		background-color: rgb(35, 29, 61);
 		z-index: 9999;
-		padding-top: 0px;
 		overflow: hidden;
 		left: -100%;
 		height: 100vh;
@@ -473,12 +491,29 @@ div.add-content {
 		font-size: small;
 /*		top: 100%;*/
 	}
+	@media only screen and (max-height: 650px) {
+		div.menu {
+			padding-top: 70px;
+			overflow-y: scroll;
+		}
+	}
+	@media only screen and (max-height: 500px) {
+		div.menu {
+			padding-top: 40vh;
+			overflow-y: scroll;
+		}
+	}
 	div.signup-content {
 		height: auto;
-		margin-top: 10%;
 		border-radius: 4px;
+		position: relative;
 /*		margin-top: -3%;*/
-		overflow: scroll;
+	}
+	@media only screen and (max-height: 700px) {
+		div.signup-content {
+			top: 40px;
+			margin-bottom: 10px;
+		}
 	}
 	div.menu hr {
 		border-color: whitesmoke;
@@ -598,5 +633,11 @@ div.add-content {
 	}
 	div.home {
 		width: auto;
+		position: relative;
+	}
+	@media only screen and (max-height: 450px) {
+		div.home {
+			top: 50px;
+		}
 	}
 }
