@@ -29,8 +29,11 @@
 				<div class="tasks">
 					<label class="label">{{todo.label}}&nbsp;</label><label class="created">created&nbsp;{{todo.date_created}}</label><br><hr>
 					<label class="tasks" id="todo{{ todo.pk }}">{{ todo.tasks }}</label><hr>
+					{% if todo.Check_if_task_is_completed == True %}
+						<label style="color: lightgreen;">Completed</label><hr>
+					{% endif %}
 					<div class="del-edit">
-						<a class="edit" href="{% url 'edit' todo.pk %}">Edit</a>
+						<a class="edit" href="{% url 'edit' todo.pk %}">Update</a>
 						<a class="edit" href="{% url 'delete' todo.pk %}">Delete</a>
 					</div>
 				</div>
